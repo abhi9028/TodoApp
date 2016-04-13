@@ -14,10 +14,16 @@ TodoApp.config(
                 controller: 'MainController',
                 templateUrl: 'views/home.html'
             })
-            .state('nerds', {
-                url: '/nerds',
-                templateUrl: 'views/nerd.html',
-                controller: 'NerdController'
+            .state('todos', {
+                url: '/todos',
+                templateUrl: 'views/todos.html',
+                controller: 'TodosController'
+            })
+
+            .state('todos_new', {
+                url: '/todos/new',
+                templateUrl: 'views/new_todo.html',
+                controller: 'NewTodoController'
             })
        }
   ]

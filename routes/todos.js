@@ -14,9 +14,13 @@ router.get('/', function(req, res, next) {
 
 /* POST /todos */
 router.post('/', function(req, res, next) {
-  Todo.create(req.body, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
+  Todo.create(req.body.todo, function (err, post) {
+    if (err) {
+      error = Todo.validateSync();
+      console.log(error)
+    } else {
+      res.json(post);
+    }
   });
 });
 
